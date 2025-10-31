@@ -8,14 +8,15 @@ Implements basic CRUD operations for users, with in-memory storage and error han
 ```bash
 npm install
 npm run dev
-
-## examples of use:
-
-### Criar usuário
+```
+## Examples of use:
+```bash
+# Criar usuário
 curl -X POST http://localhost:3000/users -H "Content-Type: application/json" -d '{"name":"Gabriel","email":"gabriel@example.com"}'
 
-### Listar usuários
+# Listar usuários
 curl http://localhost:3000/users
 
-### Deletar usuário
+# Deletar usuário
 curl -X DELETE http://localhost:3000/users/1
+```
