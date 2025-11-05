@@ -33,3 +33,19 @@ exports.deleteUser = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.updateUser = async (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id);
+    const { name, email } = req.body;
+    const user = users.find(u => u.id === id);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    if (name) user.name = name;
+    if (email) user.email = email;
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+}
